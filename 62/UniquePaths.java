@@ -21,6 +21,8 @@
 public class UniquePaths
 {
     // dynamic programming solution
+    // time complexity : O(mn)
+    // space complexity : O(mn)
     public int uniquePaths( int m, int n )
     {
         // number of paths to reach each cell 
@@ -32,7 +34,7 @@ public class UniquePaths
             numPaths[i][0] = 1;
         }
 
-        // only one way to reach each cell in the top-most column
+        // only one way to reach each cell in the top-most row
         for ( int i = 0; i < n; i++ )
         {
             numPaths[0][i] = 1;
@@ -53,6 +55,8 @@ public class UniquePaths
         // return result for bottom-right corner cell
         return numPaths[m-1][n-1];
     }
+
+    // TODO: add solution that uses a 1D array rather than a 2D array
 
     public static void main( String[] argv )
     {
